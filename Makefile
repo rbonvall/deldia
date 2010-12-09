@@ -132,5 +132,7 @@ doctest:
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 deploy: html
+	git checkout gh-pages && ./deploy.sh
 	./deploy.sh
+	git checkout master
 

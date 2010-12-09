@@ -134,6 +134,7 @@ doctest:
 deploy: html
 	git checkout gh-pages
 	mv _build/html/* .
-	git commit -a -m "$$(date +%Y.%m.%d.%H:%M:%S)"
+	git add *
+	git commit -m "$$(date +%Y.%m.%d.%H:%M:%S)"
 	git checkout master
 

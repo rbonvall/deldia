@@ -130,3 +130,10 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+deploy: html
+	git checkout gh-pages
+	mv _build/html/* .
+	git commit -a -m "$$(date +%Y.%m.%d.%H:%M:%S)"
+	git checkout master
+
